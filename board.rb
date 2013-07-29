@@ -77,7 +77,6 @@ class Board
       return false if !@board[z][y].eql?("  ")
     end
     return true
-
   end
   
   # moves a block in a given direction by one space
