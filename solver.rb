@@ -31,7 +31,9 @@ def solve(board)
       showSolution(b)
       exit
     end
+
     next if seen.include?(b)
+
     seen.add(b)
     boards = b.generateAllBoards
     boards.each do |child|
