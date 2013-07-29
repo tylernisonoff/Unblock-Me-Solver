@@ -28,6 +28,8 @@ class Board
     return hash
   end
 
+  # generates all possible boards that can arise out of a given board
+  # returns array of all the boards
   def generateAllBoards
     boards = []
     @blocks.each do |block|
@@ -64,6 +66,7 @@ class Board
     return boards
   end
   
+  # returns true if the prisoner can escape
   def canPrisonerEscape?
     return false if !@prisoner
     x,y = @prisoner.position
@@ -76,7 +79,9 @@ class Board
     return true
 
   end
-
+  
+  # moves a block in a given direction by one space
+  # void method
   def move(x,y, direction)
     # initialize block to something
     block = self.blocks[0]
@@ -105,6 +110,9 @@ class Board
     end
   end
 
+  # adds a block to the board
+  # block should be initialized with coordinates
+  # void method
   def addBlock(block)
     @blocks << block
     
@@ -131,6 +139,8 @@ class Board
     end
   end
 
+  # checks to see if a block can move in a certain direction
+  # returns true if it can
   def canMove?(block, direction)
     type = block.type
     x, y, length = block.x, block.y, block.length
@@ -174,10 +184,6 @@ class Board
     new.lettersToUse = self.lettersToUse
     new.parent = self.parent
     return new
-  end
-
-  def clone
-    Marshal::load(Marshal.dump(self))
   end
 
 end
