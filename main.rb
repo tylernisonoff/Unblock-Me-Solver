@@ -2,7 +2,8 @@ require "./board.rb"
 require "./solver.rb"
 
 board = Board.new(6,6)
-#add horizontal
+#
+#add veritcal
 board.addBlock(Block.new(VERTICAL, 3, 0,0))
 board.addBlock(Block.new(VERTICAL, 2, 3,0))
 board.addBlock(Block.new(VERTICAL, 2, 5,0))
@@ -10,7 +11,7 @@ board.addBlock(Block.new(VERTICAL, 3, 4,2))
 board.addBlock(Block.new(VERTICAL, 2, 5,3))
 board.addBlock(Block.new(VERTICAL, 2, 2,4))
 
-#add vertical
+#add horizontal
 board.addBlock(Block.new(HORIZONTAL, 2, 1,1))
 board.addBlock(Block.new(HORIZONTAL, 3, 0,3))
 board.addBlock(Block.new(HORIZONTAL, 2, 0,5))
