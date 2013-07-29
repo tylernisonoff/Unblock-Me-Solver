@@ -21,6 +21,7 @@ board.addBlock(Block.new(HORIZONTAL, 2, 2,2, true))
 board.print
 str = board.board
 
+puts "\n The Prisoner is the @@ guy\n"
 puts "\n Press enter to start \n"
 gets
 
