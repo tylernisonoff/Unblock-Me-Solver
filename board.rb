@@ -113,7 +113,7 @@ class Board
   # adds a block to the board
   # block should be initialized with coordinates
   # void method
-  def addBlock(block)
+  def add(block)
     @blocks << block
     
     letter = @lettersToUse.shift if !block.special
@@ -179,7 +179,7 @@ class Board
   def dup
     new = Board.new(self.width, self.height)
     @blocks.each do |b|
-      new.addBlock(Block.new(b.type, b.length, b.x,b.y,b.special))
+      new.add(Block.new(b.type, b.length, b.x,b.y,b.special))
     end
     new.lettersToUse = self.lettersToUse
     new.parent = self.parent
